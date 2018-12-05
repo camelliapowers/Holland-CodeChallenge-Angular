@@ -1,0 +1,37 @@
+body {
+  background: #ffffff;
+  color: #20285b;
+  font-weight: normal;
+  font-family: 'Nunito Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+p, div{
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #14377d;
+  font-size: 9px;
+  line-height: 12px;
+}
+h5 {
+    padding: 0;
+    margin: 0;
+    font-size: 1.1em;
+    line-height: 9px;
+  }
+
+.col-3 {
+  width: 30%;
+  float: left;
+}
+
+button {
+  outline: 0;
+  border: none;
+  
+}
+

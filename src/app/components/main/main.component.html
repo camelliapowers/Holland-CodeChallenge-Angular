@@ -1,0 +1,15 @@
+<div class="main_container">
+  <nav>
+    <ul class="topnav">
+      <li><a href="#">Logo</a></li>
+      <li><a href="#">Trip</a></li>
+      <li><a href="#">Check In</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li class="icon"><a>&#9776;</a></li>
+    </ul>
+  </nav>
+  <div *ngFor="let item of items">
+    <app-tile [trip]="item.voyages[0]"></app-tile>
+  </div>
+</div>

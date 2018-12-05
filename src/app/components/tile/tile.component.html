@@ -1,0 +1,57 @@
+<div class="tile_container">
+  <div class="tile_nav">
+    <h5>{{trip.itinerary.description}}</h5>
+  </div>
+  <div class="tile_body">
+    <div class="intinerary_details" style="margin-bottom: 20px;">
+      <div class="col-3 map">
+        <a href="#">
+          <figure>
+            <img src="https://camo.githubusercontent.com/27c060c5c7ff8f16711241c392fcded38a516b6c/68747470733a2f2f71612e686f6c6c616e64616d65726963612e636f6d2f696d616765732f6974696e65726172794d6170732f7468756d622f6e6f5f6d61702e6a7067"
+              alt="View Map" />
+            <figcaption>View Larger Map <i class="fas fa-search"></i></figcaption>
+          </figure>
+        </a>
+      </div>
+      <div class="col-3 intinerary">
+        <p>DEPARTURE DATE: <span class="departure_date">{{trip.dateDepart | date: 'd MMM y'}}</span></p>
+        <p>SHIP: <strong>{{trip.ship.displayName}}</strong></p>
+        <p class="depart_from">DEPARTS: <span class="trip_location">{{trip.embarkPort.portName}}</span></p>
+        <p class="arrive_to">ARRIVES: <span class="trip_location">{{trip.disembarkPort.portName}}</span> </p>
+      </div>
+      <div class="col-3 pricing">
+        <p>
+          From <span class="price_tag">{{trip.currencySymbol}}{{trip.lowestVoyagePrice | number:0}}</span>
+          per person <strong>{{trip.stateRooms[0].meta}}</strong>
+        </p>
+        <p>
+          <a href="">*{{trip.TFPE.text}} {{trip.currencySymbol}}{{trip.stateRooms[0].priceBlocks[0].govtFeesAndTaxes}}</a>
+        </p>
+        <button class="btn view_itinerary" routerLink="/itinerary" routerLinkActive="active">VIEW ITINERARY</button>
+      </div>
+    </div>
+    <div class="buy_strip_container">
+      <div class="buy_strip">
+        <div class="select_room">
+          <div class="room_type" *ngFor="let item of trip.stateRooms">
+            <div class="room_type_desciption"><span>{{item.meta}}</span></div>
+            <button class="btn primary">
+              {{trip.currencySymbol}}{{item.priceBlocks[0].prices[0].fare | number:0}}*
+            </button>
+          </div>
+        </div>
+        <button class="btn book_now" routerLink="/itinerary" routerLinkActive="active">BOOK NOW</button>
+        <p><a href="#">*{{trip.TFPE.text}} {{trip.currencySymbol}}{{trip.stateRooms[0].priceBlocks[0].govtFeesAndTaxes}}</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="tile_footnote">
+    <ul>
+      <li>*The deposit on this cruise is fully non-refundable.
+        Fares shown are in US$, per person, based on double occupancy.
+        Fares reflect best fare available for a stateroom in each category,
+        on one date that this itinerary is available from a snapshot taken in the last 24 hours.
+        <a href="#">View Pricing Terms.</a></li>
+    </ul>
+  </div>
+</div>

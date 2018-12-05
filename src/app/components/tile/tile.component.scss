@@ -1,0 +1,274 @@
+/*---Tile General---*/
+
+.tile_container {
+  border: 1px solid #ccc;
+  width: 99%;
+  max-width: 784px;
+  margin: 0 auto;
+  font-size: .75em;
+  clear: both;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: rgb(255, 255, 255);
+  /* Old browsers */
+  background: -moz-linear-gradient(top, rgb(255, 255, 255) 0%, rgb(234, 239, 248) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgb(255, 255, 255) 0%, rgb(234, 239, 248) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(234, 239, 248) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eaeff8', GradientType=0);
+  /* IE6-9 */
+  margin-bottom: 40px;
+}
+
+.tile_nav {
+  padding: 14px;
+  color: #fff;
+  background: #2B386F;
+  height: 5px;
+  text-transform: uppercase;
+  border-radius: 3px 3px 0px 0px;
+  -moz-border-radius: 3px 3px 0px 0px;
+  -webkit-border-radius: 3px 3px 0px 0px;
+
+}
+
+.tile_body {
+  margin: 12px;
+
+}
+
+/*---Buttons---*/
+
+%btn {
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px;
+  min-width: 88px;
+
+}
+
+.primary {
+  @extend %btn;
+  background: #fff;
+  border: 1px solid;
+
+  &:hover {
+    color: #fff;
+    background: #14377d;
+  }
+}
+
+.view_itinerary {
+  @extend .primary;
+  padding: 10px 30px;
+  margin: 10px 0px;
+}
+
+.book_now {
+  @extend %btn;
+  background-color: #ffcb66;
+  padding: 10px 30px;
+  margin: 0 0 20px;
+
+  &:hover {
+    background-color: #edaa24bb;
+  }
+}
+
+/*---Map---*/
+
+.map {
+  background: #ffffff;
+  border: 1px solid #bbbbbb;
+
+  & a {
+    color: #5d9bd1;
+    text-decoration: none;
+  }
+
+  figure {
+    margin: 0;
+
+    img {
+      width: 100%;
+    }
+
+    figcaption {
+      font-size: 9px;
+      line-height: 10px;
+      padding: 0 0 4px;
+
+    }
+  }
+}
+
+/*---Trip Details---*/
+
+.intinerary {
+  text-align: left;
+  padding: 15px;
+  line-height: 22px;
+}
+
+.intinerary_details {
+  clear: both;
+  overflow: auto;
+  text-align: center;
+}
+
+.trip_location {
+  font-weight: bold;
+}
+
+.departure_date {
+  font-size: 1.3em;
+  line-height: 40px;
+  font-weight: bold;
+  padding-left: 5px;
+  display: block;
+}
+
+/*---Price---*/
+
+.pricing {
+  float: right;
+
+  & a {
+    line-height: 50px;
+  }
+
+  .price_tag {
+    font-size: 2.2em;
+    display: block;
+    font-weight: bold;
+  }
+}
+
+/*---Select Room---*/
+
+.buy_strip_container {
+  border: 1px solid #bbbbbb;
+  text-align: center;
+  background: #fff;
+  padding: 4px;
+
+  .buy_strip {
+    background: #eaeff8;
+    padding: 20px;
+    padding-top: 10px;
+  }
+}
+
+.select_room {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.room_type {
+  display: inline-block;
+  margin: 0 5px;
+  width: 88px;
+}
+
+.room_type_desciption {
+  color: #20285b;
+  font-weight: normal;
+  text-align: center;
+  width: 90px;
+  height: 18px;
+  font-size: .9em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.room_type:first-child button {
+  color: #fff;
+  background: #14377d;
+}
+
+
+/*---Footnotes---*/
+
+.tile_footnote {
+  font-size: 9px;
+  line-height: 12px;
+
+  & ul {
+    padding: 5px 15px 15px;
+  }
+
+  & li {
+    list-style: none;
+  }
+
+  & a {
+    font-weight: bolder;
+  }
+
+}
+
+/* Small viewport - Mobile */
+
+@media only screen and (min-width: 320px) and (max-width: 460px) {
+  .col-3 {
+    width: 99%;
+  }
+
+  .intinerary {
+    text-align: center;
+  }
+
+  .depart_from,
+  .arrive_to {
+    width: 40%;
+    float: left;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .depart_from {
+    border-right: 1px solid #ccc;
+  }
+
+  .trip_location {
+    display: block;
+  }
+
+  .price_tag {
+    font-size: 2.5em;
+  }
+
+  button.btn.primary_active,
+  button.btn.primary {
+    margin-bottom: 20px;
+  }
+
+  .book_now {
+    width: 96%;
+  }
+
+  .select_room {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: start;
+  }
+
+  .room_type {
+    width: 100%;
+    margin: 0;
+  }
+
+  .room_type_desciption,
+  button {
+    width: 90%;
+    text-align: center;
+    padding-left: 5%;
+  }
+
+}
